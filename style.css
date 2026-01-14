@@ -13,16 +13,16 @@ input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; bord
 /* Layout */
 .main-body { display: grid; grid-template-columns: 1fr 300px; height: calc(100vh - 60px); }
 .question-column { background: white; padding: 25px; display: flex; flex-direction: column; border-right: 2px solid #ddd; }
-.palette-column { background: #fff; padding: 20px; }
+.palette-column { background: #fff; padding: 20px; overflow-y: auto; }
 
 /* Palette Circles */
 #palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
-.p-circle { width: 40px; height: 40px; border: 1px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; }
+.p-circle { width: 40px; height: 40px; border: 1px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
 
 /* Palette Colors */
 .p-circle.answered { background: var(--success); color: white; border: none; }
 .p-circle.skipped { background: var(--danger); color: white; border: none; }
-.p-circle.current { border: 3px solid var(--secondary); font-weight: bold; }
+.p-circle.current { border: 3px solid var(--secondary); font-weight: bold; background: #e7f3ff; }
 
 /* Buttons */
 .q-footer { margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; display: flex; gap: 15px; }
@@ -31,10 +31,17 @@ button { padding: 10px 25px; border-radius: 4px; border: 1px solid #ccc; cursor:
 .red-btn { background: var(--danger); color: white; border: none; margin-left: auto; }
 
 /* Options */
-.options-grid div { background: #f8f9fa; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #eee; }
+.option-item { background: #f8f9fa; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #eee; display: flex; align-items: center; }
+.option-item input { width: auto; margin: 0 10px 0 0; }
 
 /* Analysis */
-.analysis-card { background: white; max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 10px; text-align: center; }
+.analysis-card { background: white; max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 .stats-grid { display: flex; justify-content: space-around; margin: 20px 0; }
-.stat-box { padding: 15px; border-radius: 8px; border: 1px solid #ddd; width: 100px; }
+.stat-box { padding: 15px; border-radius: 8px; border: 1px solid #ddd; width: 120px; }
+.stat-box span { display: block; font-size: 1.5rem; font-weight: bold; margin-top: 5px; }
+.green { background: #d4edda; color: #155724; }
+.red { background: #f8d7da; color: #721c24; }
 .final-score { color: var(--primary); font-size: 3rem; }
+
+.legend { font-size: 0.8rem; text-align: left; }
+.box { display: inline-block; width: 12px; height: 12px; margin-right: 5px; border: 1px solid #ccc; }
