@@ -1,73 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSC CGL 2026 Mock Test</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSC/Maths Mock Exam</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="start-screen" class="modal-container">
-        <div class="card">
-            <img src="https://upload.wikimedia.org/wikipedia/en/0/0b/Staff_Selection_Commission_Logo.png" alt="SSC Logo" width="100">
-            <h1>SSC CGL 2025 - Practice Mock</h1>
-            <p>Enter your details to begin the simulation</p>
-            <input type="text" id="user-name" placeholder="Candidate Name" required>
-            <button id="start-btn">START EXAM</button>
-        </div>
-    </div>
+<!-- START SCREEN -->
+<div id="start-screen" class="screen">
+  <h1>Welcome to Mock Exam</h1>
+  <p>Enter your name to begin:</p>
+  <input type="text" id="user-name" placeholder="Your Name">
+  <button id="start-btn">Start Exam</button>
+</div>
 
-    <div id="exam-interface" class="hidden">
-        <nav class="top-nav">
-            <div class="nav-left">SSC CGL 2025 - Tier I</div>
-            <div class="nav-right">Time Left: <span id="timer">30:00</span></div>
-        </nav>
+<!-- EXAM INTERFACE -->
+<div id="exam-interface" class="screen hidden">
+  <div class="top-bar">
+    <span id="candidate-display"></span>
+    <span id="timer">60:00</span>
+  </div>
 
-        <div class="main-body">
-            <div class="question-column">
-                <div class="q-header">
-                    <span>Question No: <b id="q-number">1</b></span>
-                    <span id="candidate-display" style="font-size: 0.8rem; color: #555;"></span>
-                </div>
-                <div class="q-content">
-                    <p id="question-text" class="q-prose">Loading question...</p>
-                    <div id="options-list" class="options-grid"></div>
-                </div>
-                <div class="q-footer">
-                    <button id="prev-btn">Previous</button>
-                    <button id="next-btn" class="blue-btn">Save & Next</button>
-                    <button id="submit-btn" class="red-btn">Submit Exam</button>
-                </div>
-            </div>
+  <div class="question-section">
+    <h3>Question <span id="q-number"></span>:</h3>
+    <p id="question-text"></p>
+    <div id="options-list"></div>
+  </div>
 
-            <div class="palette-column">
-                <h3>Question Palette</h3>
-                <div id="palette-grid"></div>
-                <hr>
-                <div class="legend">
-                    <div class="legend-item"><span class="box answered"></span> Answered</div>
-                    <div class="legend-item"><span class="box skipped"></span> Not Answered</div>
-                    <div class="legend-item"><span class="box current"></span> Current</div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="nav-buttons">
+    <button id="prev-btn">Previous</button>
+    <button id="next-btn">Next</button>
+    <button id="submit-btn">Submit</button>
+  </div>
 
-    <div id="result-screen" class="hidden container">
-        <div class="analysis-card">
-            <h2>Performance Report</h2>
-            <p>Candidate: <b id="res-name"></b></p>
-            <div class="stats-grid">
-                <div class="stat-box">Total Questions<span id="res-total">0</span></div>
-                <div class="stat-box green">Correct<span id="res-correct">0</span></div>
-                <div class="stat-box red">Incorrect<span id="res-wrong">0</span></div>
-            </div>
-            <h1 class="final-score">Final Score: <span id="res-score">0</span></h1>
-            <button onclick="location.reload()" class="blue-btn">Take Another Test</button>
-        </div>
-    </div>
+  <div id="palette-container">
+    <h4>Question Palette</h4>
+    <div id="palette-grid"></div>
+  </div>
+</div>
 
-    <script src="script.js" defer></script>
+<!-- RESULT SCREEN -->
+<div id="result-screen" class="screen hidden">
+  <h1>Exam Result</h1>
+  <p>Name: <span id="res-name"></span></p>
+  <p>Total Questions: <span id="res-total"></span></p>
+  <p>Correct Answers: <span id="res-correct"></span></p>
+  <p>Wrong Answers: <span id="res-wrong"></span></p>
+  <p>Score: <span id="res-score"></span></p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
