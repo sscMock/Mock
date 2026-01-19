@@ -1,47 +1,87 @@
-:root { --primary: #003366; --secondary: #007bff; --success: #28a745; --danger: #dc3545; }
-body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f0f2f5; }
-.hidden { display: none !important; }
+ body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0;
+}
 
-/* Modal & Cards */
-.modal-container { display: flex; align-items: center; justify-content: center; height: 100vh; }
-.card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; width: 350px; }
-input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+.screen {
+  text-align: center;
+  padding: 50px;
+}
 
-/* Top Nav */
-.top-nav { background: var(--primary); color: white; padding: 15px 30px; display: flex; justify-content: space-between; font-weight: bold; }
+.hidden {
+  display: none;
+}
 
-/* Layout */
-.main-body { display: grid; grid-template-columns: 1fr 300px; height: calc(100vh - 60px); }
-.question-column { background: white; padding: 25px; display: flex; flex-direction: column; border-right: 2px solid #ddd; }
-.palette-column { background: #fff; padding: 20px; overflow-y: auto; }
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background: #333;
+  color: #fff;
+}
 
-/* Palette Circles */
-#palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 20px 0; }
-.p-circle { width: 40px; height: 40px; border: 1px solid #ccc; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; transition: 0.2s; }
+.question-section {
+  margin: 20px auto;
+  max-width: 700px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
 
-/* Palette Colors */
-.p-circle.answered { background: var(--success); color: white; border: none; }
-.p-circle.skipped { background: var(--danger); color: white; border: none; }
-.p-circle.current { border: 3px solid var(--secondary); font-weight: bold; background: #e7f3ff; }
+.option-item {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-/* Buttons */
-.q-footer { margin-top: auto; padding-top: 20px; border-top: 1px solid #eee; display: flex; gap: 15px; }
-button { padding: 10px 25px; border-radius: 4px; border: 1px solid #ccc; cursor: pointer; font-weight: 600; }
-.blue-btn { background: var(--secondary); color: white; border: none; }
-.red-btn { background: var(--danger); color: white; border: none; margin-left: auto; }
+.option-item input {
+  margin-right: 10px;
+}
 
-/* Options */
-.option-item { background: #f8f9fa; padding: 12px; margin: 8px 0; border-radius: 5px; border: 1px solid #eee; display: flex; align-items: center; }
-.option-item input { width: auto; margin: 0 10px 0 0; }
+.nav-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-/* Analysis */
-.analysis-card { background: white; max-width: 600px; margin: 50px auto; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.stats-grid { display: flex; justify-content: space-around; margin: 20px 0; }
-.stat-box { padding: 15px; border-radius: 8px; border: 1px solid #ddd; width: 120px; }
-.stat-box span { display: block; font-size: 1.5rem; font-weight: bold; margin-top: 5px; }
-.green { background: #d4edda; color: #155724; }
-.red { background: #f8d7da; color: #721c24; }
-.final-score { color: var(--primary); font-size: 3rem; }
+#palette-container {
+  margin-top: 30px;
+}
 
-.legend { font-size: 0.8rem; text-align: left; }
-.box { display: inline-block; width: 12px; height: 12px; margin-right: 5px; border: 1px solid #ccc; }
+#palette-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.p-circle {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.p-circle.current {
+  background: #ff9800;
+  color: #fff;
+}
+
+.p-circle.answered {
+  background: #4caf50;
+  color: #fff;
+}
+
+.p-circle.skipped {
+  background: #f44336;
+  color: #fff;
+}
